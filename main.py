@@ -32,7 +32,7 @@ def webhook():
             {
                 "text": {
                     "text": [
-                        We are offering a 20% discount on all items until April 5th, 2024
+                        "We are offering a 20% discount on all items until April 5th, 2024"
                     ]
                 }
             }
