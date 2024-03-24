@@ -31,9 +31,7 @@ def webhook():
         "fulfillmentMessages": [
             {
                 "text": {
-                    "text": [
-                        "We are offering a 20% discount on all items until April 5th, 2024"
-                    ]
+                    "text": [ "We are offering a 20% discount on all items until April 5th, 2024"]
                 }
             }
         ]
