@@ -15,7 +15,7 @@ def dialogflow():
     intent_name = req.get('queryResult', {}).get('intent', {}).get('displayName', '')
 
     # Initialize an empty response text
-    response_text = "I'm not sure how to help with that."
+    response_text = "We are offering a 20% discount on all items until April 5th, 2024"
 
     # Determine the appropriate response based on the intent
     if intent_name == "Special Offers":
