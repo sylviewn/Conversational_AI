@@ -2,12 +2,12 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def home():
     # Return your student number in properly formatted JSON
     return jsonify({"student_number": "200604560"}), 200
 
-@app.route('/dialogflow', methods=['GET', 'POST'])
+@app.route('/dialogflow', methods=['POST'])
 def dialogflow():
     req = request.get_json(silent=True, force=True)
     
@@ -27,17 +27,17 @@ def dialogflow():
     # Add more elif statements here for other intents as needed
 
     # Construct the fulfillment response to send back to Dialogflow
-    response = {
+    return jsonify(
+        {
         "fulfillmentMessages": [
             {
                 "text": {
-                    "text": [ "We are offering a 20% discount on all items until April 5th, 2024"]
+                    "text": ["We are offering a 20% discount on all items until April 5th, 2024"]
                 }
             }
         ]
-    }
-
-    return jsonify(response), 200
+        }
+    ), 200
 
 if __name__ == '__main__':
     # Start the Flask app
