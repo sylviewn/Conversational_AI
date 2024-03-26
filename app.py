@@ -2,13 +2,13 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
 def home():
     # Return your student number in properly formatted JSON
     return jsonify({"student_number": "200604560"}), 200
 
-@app.route('/webhook', methods=['POST'])
-def webhook():
+@app.route('/dialogflow', methods=['GET', 'POST'])
+def dialogflow():
     req = request.get_json(silent=True, force=True)
     
     # Extract the intent name from the request
